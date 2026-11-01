@@ -1,0 +1,18 @@
+# Python environment
+.env/
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Git
+.git/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# OS files
+.DS_Store
+Thumbs.dbdata/
