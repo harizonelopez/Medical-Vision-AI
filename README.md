@@ -2,11 +2,11 @@
 
 > AI-powered chest X-ray analysis with explainable deep learning.
 
-![Python](https://img.shields.io/badge/Python-3.12-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red)
-![Computer Vision](https://img.shields.io/badge/Computer-Vision-blue)
-![GradCAM](https://img.shields.io/badge/Explainability-GradCAM-cyan)
-![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-green)
+![Blue technology badge reading Python 3.12](https://img.shields.io/badge/Python-3.12-blue)
+![Red technology badge reading PyTorch Deep Learning](https://img.shields.io/badge/PyTorch-Deep%20Learning-red)
+![Blue technology badge reading Computer Vision](https://img.shields.io/badge/Computer-Vision-blue)
+![Cyan technology badge reading Explainability GradCAM](https://img.shields.io/badge/Explainability-GradCAM-cyan)
+![Green technology badge reading Frontend Streamlit](https://img.shields.io/badge/Frontend-Streamlit-green)
 
 MedVision AI is an educational computer-vision project that demonstrates how a deep-learning model can be used to explore chest X-ray classification and visualize image regions that influence a prediction. It combines PyTorch inference with an interactive Streamlit interface and Grad-CAM explainability.
 
