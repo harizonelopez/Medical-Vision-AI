@@ -45,11 +45,11 @@ The project covers an end-to-end machine-learning workflow: dataset preparation 
 
 At a high level, the workflow is:
 
-1. Prepare the chest X-ray data and create patient-level training, validation, and test splits.
-2. Train a ResNet-18 binary classifier using PyTorch and transfer learning, with weighted loss to account for class imbalance.
-3. Evaluate the model on a held-out test set, including ROC-AUC, sensitivity, and specificity.
-4. Upload an image through the Streamlit dashboard to view a model score and Grad-CAM visualization.
-5. Optionally adjust the displayed decision threshold, review session history, and download a research report.
+- Prepare the chest X-ray data and create patient-level training, validation, and test splits.
+- Train a ResNet-18 binary classifier using PyTorch and transfer learning, with weighted loss to account for class imbalance.
+- Evaluate the model on a held-out test set, including ROC-AUC, sensitivity, and specificity.
+- Upload an image through the Streamlit dashboard to view a model score and Grad-CAM visualization.
+- Optionally adjust the displayed decision threshold, review session history, and download a research report.
 
 
 ## Model and task
@@ -71,11 +71,11 @@ Patient-level splitting is used to separate training, validation, and test data.
 
 Reported performance on the held-out test set:
 
-| Metric      | Result     |
-| ----------- | ---------- |
-| ROC-AUC     | **0.7744** |
-| Sensitivity | **76.3%**  |
-| Specificity | **65.1%**  |
+|  Metric       |  Result      |
+|---------------|--------------|
+|  ROC-AUC      |  **0.7744**  |
+|  Sensitivity  |  **76.3%**   |
+|  Specificity  |  **65.1%**   |
 
 These are project-reported results for the stated test set and evaluation setup. Performance may vary across datasets, populations, image acquisition conditions, and decision thresholds. Sensitivity and specificity are threshold-dependent; these metrics alone do not establish clinical utility or safety.
 
@@ -84,15 +84,15 @@ These are project-reported results for the stated test set and evaluation setup.
 > MedVision AI is containerized using Docker, providing a consistent runtime environment with the application's dependencies and configuration.
 
 **Core Technologies**
-- **Python 3.12** --> Main programming language.
-- **PyTorch** --> Deep learning framework.
-- **Torchvision** --> Image processing and pretrained computer vision models.
-- **Streamlit** --> Interactive web application framework.
-- **NumPy** --> Numerical computing.
-- **Pandas** --> Data manipulation and analysis.
-- **Pillow** --> Image loading and processing.
-- **Grad-CAM** --> Visual explanations of model predictions.
-- **Docker** --> Containerization and environment consistency.
+- **Python 3.12** --> *Main programming language.*
+- **PyTorch** --> *Deep learning framework.*
+- **Torchvision** --> *Image processing and pretrained computer vision models.*
+- **Streamlit** --> *Interactive web application framework.*
+- **NumPy** --> *Numerical computing.*
+- **Pandas** --> *Data manipulation and analysis.*
+- **Pillow** --> *Image loading and processing.*
+- **Grad-CAM** --> *Visual explanations of model predictions.*
+- **Docker** --> *Containerization and environment consistency.*
 
 ## Project limitations
 
