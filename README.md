@@ -84,15 +84,15 @@ These are project-reported results for the stated test set and evaluation setup.
 > MedVision AI is containerized using Docker, providing a consistent runtime environment with the application's dependencies and configuration.
 
 **Core Technologies**
-- **Python 3.12** --> *Main programming language.*
-- **PyTorch** --> *Deep learning framework.*
-- **Torchvision** --> *Image processing and pretrained computer vision models.*
-- **Streamlit** --> *Interactive web application framework.*
-- **NumPy** --> *Numerical computing.*
-- **Pandas** --> *Data manipulation and analysis.*
-- **Pillow** --> *Image loading and processing.*
-- **Grad-CAM** --> *Visual explanations of model predictions.*
-- **Docker** --> *Containerization and environment consistency.*
+- **Python 3.12** - *Main programming language.*
+- **PyTorch** - *Deep learning framework.*
+- **Torchvision** - *Image processing and pretrained computer vision models.*
+- **Streamlit** - *Interactive web application framework.*
+- **NumPy** - *Numerical computing.*
+- **Pandas** - *Data manipulation and analysis.*
+- **Pillow** - *Image loading and processing.*
+- **Grad-CAM** - *Visual explanations of model predictions.*
+- **Docker** - *Containerization and environment consistency.*
 
 ## Project limitations
 
