@@ -107,3 +107,11 @@ These are project-reported results for the stated test set and evaluation setup.
 - *Explore Vision Transformers*
 - *Add DICOM support and batch inference*
 - *Improve confidence calibration and inference speed*
+
+
+CT --> Computer Tomography
+    - Uses 'x-rays' to view the cross-section of objects ie. bones, lungs
+
+MRI --> Magnetic Resonance Imaging 
+    - Uses 'magnetic fields' and 'radio waves' to view detailed information of a (soft)tissue ie. brain, heart
+
