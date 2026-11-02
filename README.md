@@ -23,7 +23,6 @@ MedVision AI is an educational computer-vision project that demonstrates how a d
 - [Technology stack](#technology-stack)
 - [Project limitations](#project-limitations)
 - [Future work](#future-work)
-- [Author](#author)
 
 ## Overview
 
@@ -80,14 +79,20 @@ Reported performance on the held-out test set:
 
 These are project-reported results for the stated test set and evaluation setup. Performance may vary across datasets, populations, image acquisition conditions, and decision thresholds. Sensitivity and specificity are threshold-dependent; these metrics alone do not establish clinical utility or safety.
 
-## Technology stack
+## Technology Stack
 
-- Python 3.12
-- PyTorch and Torchvision
-- Streamlit
-- NumPy and Pandas
-- Pillow
-- Grad-CAM
+> MedVision AI is containerized using Docker, providing a consistent runtime environment with the application's dependencies and configuration.
+
+**Core Technologies**
+- **Python 3.12** –-> Main programming language.
+- **PyTorch** –-> Deep learning framework.
+- **Torchvision** –-> Image processing and pretrained computer vision models.
+- **Streamlit** –-> Interactive web application framework.
+- **NumPy** –-> Numerical computing.
+- **Pandas** –-> Data manipulation and analysis.
+- **Pillow** –-> Image loading and processing.
+- **Grad-CAM** –-> Visual explanations of model predictions.
+- **Docker** –-> Containerization and environment consistency.
 
 ## Project limitations
 
@@ -99,6 +104,6 @@ These are project-reported results for the stated test set and evaluation setup.
 
 ## Future work
 
-- Explore Vision Transformers.
-- Add DICOM support and batch inference.
-- Improve confidence calibration and inference speed.
+- *Explore Vision Transformers*
+- *Add DICOM support and batch inference*
+- *Improve confidence calibration and inference speed*
