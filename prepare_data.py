@@ -29,7 +29,7 @@ def main():
         na=False,
     )
 
-    # Negative: explicitly labeled No Finding.
+    # Negative: explicitly labeled as "No Finding".
     no_finding_mask = df["Finding Labels"].eq("No Finding")
 
     df = df[pneumonia_mask | no_finding_mask].copy()
@@ -82,3 +82,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
