@@ -29,7 +29,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
-# st.title("DEBUG: MedVision AI is running")  # added for debugging purposes
+# st.title("DEBUG INFO: MedVision AI is running")  # added for debugging purposes
 
 MODEL_PATH = Path("models/best_model.pt")
 ROC_CURVE_PATH = Path("models/roc_curve.png")
@@ -220,7 +220,7 @@ st.markdown(
 
 # MODEL + PREPROCESSING
 
-@st.cache_resource # ---> Cache the main model to avoid reloading it on every run
+@st.cache_resource  # ---> Cache the main model to avoid reloading it on every run
 def load_model() -> nn.Module:
     if not MODEL_PATH.exists():
         raise FileNotFoundError(
@@ -243,7 +243,7 @@ def load_model() -> nn.Module:
     return model
 
 
-@st.cache_resource # ---> Cache the validator model to avoid reloading it on every run
+@st.cache_resource  # ---> Cache the validator model to avoid reloading it on every run
 def load_validator_model() -> nn.Module:
     return load_xray_validator()
 
@@ -365,8 +365,8 @@ def add_history_record(
     filename: str,
     probability: float,
     threshold: float,
-    classification: str,
-) -> None:
+    classification: str ) -> None:
+
     record_key = (
         filename,
         round(probability, 6),
@@ -398,7 +398,7 @@ def add_history_record(
     )
 
 
-def build_report( # ---> Build a text report summarizing the analysis of the xray img
+def build_report(  # ---> Build a text report summarizing the analysis of the xray img
     *,
     filename: str,
     dimensions: tuple[int, int],
