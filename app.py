@@ -4,6 +4,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from io import BytesIO  # --> (added line)
 
 import numpy as np
 import pandas as pd
@@ -319,6 +320,46 @@ def create_gradcam(model, input_tensor, is_positive):
         )[0]
 
     return grayscale_cam
+
+
+# ======= start =======================
+# Cache the validation to avoid reloading it on every app-run
+
+@st.cache_data(show_spinner=False)
+def cached_validation(image_bytes: bytes):
+    image = Image.open(BytesIO(image_bytes))
+    validator = load_validator_model()
+
+    return validate_image(image, validator)
+
+
+@st.cache_data(show_spinner=False) 
+def cached_prediction(image_bytes: bytes) -> float:
+    image = Image.open(BytesIO(image_bytes))
+
+    _, _, _, input_tensor = prepare_image(image)
+
+    model = load_model()
+    return predict(model, input_tensor)
+
+
+@st.cache_data(show_spinner=False) 
+def cached_gradcam(
+    image_bytes: bytes,
+    is_positive: bool,
+) -> np.ndarray:
+    image = Image.open(BytesIO(image_bytes))
+
+    _, _, _, input_tensor = prepare_image(image)
+
+    model = load_model()
+
+    return create_gradcam(
+        model,
+        input_tensor,
+        is_positive,
+    )
+# ======= end =======================
 
 
 def create_overlay(
