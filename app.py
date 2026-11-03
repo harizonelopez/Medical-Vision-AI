@@ -785,8 +785,6 @@ else:
         current_file_key = (
             uploaded_file.name,
             uploaded_file.size,
-            # decision_threshold,
-            # heatmap_intensity,
         )
 
         if current_file_key != st.session_state.last_file_key:
