@@ -548,7 +548,7 @@ with st.sidebar:
 
     st.subheader("Analysis settings")
 
-    decision_threshold = st.slider(
+    decision_threshold = st.slider( # Prediction decision slider 
         "Decision threshold",
         min_value=0.10,
         max_value=0.90,
@@ -667,12 +667,14 @@ upload_rejected = False
 
 if uploaded_file is not None:
     try:
-        validation_image = Image.open(uploaded_file)
-        is_xray, xray_score = validate_image(
-            validation_image,
-            validator_model,
-        )
-        uploaded_file.seek(0)
+        image_bytes = uploaded_file.getvalue()
+        is_xray, xray_score = cached_validation(image_bytes)
+        # validation_image = Image.open(uploaded_file)
+        # is_xray, xray_score = validate_image(
+        #    validation_image,
+        #    validator_model,
+        # )
+        # uploaded_file.seek(0) 
 
         if not is_xray:
             upload_rejected = True
@@ -767,7 +769,10 @@ if uploaded_file is None:
 
 else:
     try:
-        uploaded_image = Image.open(uploaded_file)
+        # uploaded_image = Image.open(uploaded_file)
+        image_bytes = uploaded_file.getvalue()
+
+        uploaded_image = Image.open(BytesIO(image_bytes)).convert("RGB") # Convert to RGB to ensure compatibility with the model
         original_dimensions = uploaded_image.size
 
         (
@@ -780,19 +785,23 @@ else:
         current_file_key = (
             uploaded_file.name,
             uploaded_file.size,
-            decision_threshold,
-            heatmap_intensity,
+            # decision_threshold,
+            # heatmap_intensity,
         )
 
         if current_file_key != st.session_state.last_file_key:
             render_processing_sequence()
             st.session_state.last_file_key = current_file_key
 
-        probability = predict(model, input_tensor)
-        is_positive = probability >= decision_threshold
-        heatmap = create_gradcam(
-            model, 
-            input_tensor, 
+        # probability = predict(model, input_tensor)
+        probability = cached_prediction(image_bytes) # Reuse cached prediction
+
+        is_positive = probability >= decision_threshold # Recalculate classification immediately when threshold changes
+
+        heatmap = create_gradcam( # Regenerate Grad-CAM depending on classification
+            # model, 
+            # input_tensor,
+            image_bytes,
             is_positive
         )
         overlay = create_overlay(
@@ -802,6 +811,7 @@ else:
         )
 
         is_positive = probability >= decision_threshold
+
         classification = (
             "Pneumonia class"
             if is_positive
