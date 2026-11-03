@@ -554,9 +554,7 @@ with st.sidebar:
         max_value=0.90,
         value=0.50,
         step=0.05,
-        help=(
-            "Scores at or above this value display as Pneumonia."
-        ),
+        help=("Scores at or above this value display as Pneumonia."),
     )
 
     heatmap_intensity = st.slider(
