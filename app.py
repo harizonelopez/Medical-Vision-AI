@@ -765,7 +765,7 @@ if uploaded_file is None:
         )
 
 
-# ANALYSIS
+# DATA INTERPRETATION & ANALYSIS
 
 else:
     try:
@@ -798,9 +798,7 @@ else:
 
         is_positive = probability >= decision_threshold # Recalculate classification immediately when threshold changes
 
-        heatmap = create_gradcam( # Regenerate Grad-CAM depending on classification
-            # model, 
-            # input_tensor,
+        heatmap = create_gradcam(  # Regenerate Grad-CAM depending on classification
             image_bytes,
             is_positive
         )
